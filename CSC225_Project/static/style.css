@@ -1,0 +1,142 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #222;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+#welcome h1 {
+    font-size: 44px;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+#start-btn, #restart-btn {
+    padding: 14px 36px;
+    font-size: 1.2em;
+    background: #427e6c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 20px;
+}
+#start-btn:hover, #restart-btn:hover {
+    background: #2e5d4c;
+}
+
+#game-area h1 {
+    font-size: 36px;
+    color: #427e6c;
+    margin-bottom: 10px;
+}
+
+#game-board {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    font-size: 48px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s, transform 0.15s;
+    border-radius: 10px;
+}
+
+.cell.x {
+    color: #204080;
+}
+.cell.o {
+    color: #a02020;
+}
+.cell:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+.cell.winning {
+    background-color: #90ee90 !important;
+    animation: flash 0.5s ease-in-out infinite alternate;
+}
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0.6; }
+}
+#status {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #444;
+    min-height: 32px;
+}
+#scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: 40px auto 0 auto;
+    font-size: 32px;
+}
+.score-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.score-label {
+    font-size: 20px;
+    color: #444;
+}
+.star {
+    color: #204080;
+    font-size: 32px;
+    margin: 0 2px;
+}
+.diamond {
+    color: #a02020;
+    font-size: 32px;
+    margin: 0 2px;
+}
+.trophy {
+    color: gold;
+    font-size: 36px;
+    margin-left: 10px;
+}
+#tie-count {
+    color: #888;
+    font-size: 28px;
+}
+#trophy-banner {
+    margin: 20px auto 0 auto;
+    font-size: 28px;
+    color: #fff;
+    background: #427e6c;
+    padding: 12px 24px;
+    border-radius: 8px;
+    width: fit-content;
+    display: none;
+}
+#continue-btn {
+    margin-right: 12px;
+}

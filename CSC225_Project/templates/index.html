@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome to Tic-Tac-Toe!</h1>
+        <button id="start-btn">Start Game</button>
+    </div>
+    <div id="game-area" style="display:none;">
+        <h1>Tic-Tac-Toe</h1>
+        <div id="game-board">
+            {% for i in range(3) %}
+                <div class="row">
+                    {% for j in range(3) %}
+                        <div class="cell" data-row="{{ i }}" data-col="{{ j }}"></div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="status"></div>
+        <button id="continue-btn">▶️ Continue</button>
+        <button id="restart-btn">🔄 Restart</button>
+    </div>
+    <div id="scoreboard">
+        <div id="ai-score" class="score-side">
+            <span class="score-label">AI</span>
+            <span id="ai-diamonds"></span>
+        </div>
+        <div id="tie-score" class="score-side">
+            <span id="tie-count"></span>
+            <span class="score-label">Ties</span>
+        </div>
+        <div id="human-score" class="score-side">
+            <span id="human-stars"></span>
+            <span class="score-label">Human</span>
+        </div>
+    </div>
+    <div id="trophy-banner" style="display:none;"></div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
